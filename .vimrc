@@ -38,4 +38,11 @@ set foldlevelstart=10
 set foldnestmax=10
 "remaps open/close folds to space
 nnoremap <space> za
-"sets fold based on indentation
+"sets fold based on indentatioe
+
+"**********clang_complete**********
+"autocomplete for C/C++ code
+" path to directory where library can be found
+let g:clang_library_path='/usr/lib/llvm-3.8/lib'
+" or path directly to the library file
+let g:clang_library_path='/usr/lib64/libclang.so.3.8'
