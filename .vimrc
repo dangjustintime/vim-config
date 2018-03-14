@@ -90,4 +90,7 @@ set hlsearch
 "maps Ctrl-t to :tabe
 :map! <C-t> <Esc>:tabe<Space>
 :nmap <C-t> :tabe<Space>
-
+"adds closing parentheses to opening parentheses
+:map! ( ()<Left>
+:map! [ []<Left>
+:map! { {}<Left>
