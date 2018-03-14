@@ -1,6 +1,11 @@
 "syntax for vimrc is white space sensitive
 "be careful when spacing
 
+"comment blocks for each language
+autocmd FileType c, cpp, java let commentLeader = '// '
+autocmd FileType python let commentLeader = '# '
+
+
 "**********Vundle**********
 "vim plugin manager
 set nocompatible              " be iMproved, required
@@ -73,24 +78,27 @@ set hlsearch
 "**********REMAPPINGS**********
 ":nmap = normal mode
 ":map! = insert mode
+"<CR> = <Enter>
 "maps Ctrl-b to go to the beginning of file
-:map! <C-b> <Esc>:1<Enter>i
-:nmap <C-b> :1<Enter>
+:map! <C-b> <Esc>:1<CR>i
+:nmap <C-b> :1<CR>
 "maps Ctrl-e to go to the end of file
-:map! <C-e> <Esc>:999<Enter>i
-:nmap <C-e> :999<Enter>
+:map! <C-e> <Esc>:999<CR>i
+:nmap <C-e> :999<CR>
 "maps Ctrl-h to help (normal mode)
-:nmap <C-h> :help<Enter>
+:nmap <C-h> :help<CR>
 "maps Ctrl-Left to :tabp
-:map! <C-Left> <Esc>:tabp<Enter>i
-:nmap <C-Left> :tabp<Enter>
+:map! <C-Left> <Esc>:tabp<CR>i
+:nmap <C-Left> :tabp<CR>
 "maps Ctrl-Right to :tabn
-:map! <C-Right> <Esc>:tabn<Enter>i
-:nmap <C-Right> :tabn<Enter>
+:map! <C-Right> <Esc>:tabn<CR>i
+:nmap <C-Right> :tabn<CR>
 "maps Ctrl-t to :tabe
 :map! <C-t> <Esc>:tabe<Space>
 :nmap <C-t> :tabe<Space>
-"adds closing parentheses to opening parentheses
+"adds closing character to opening character
 :map! ( ()<Left>
 :map! [ []<Left>
 :map! { {}<Left>
+:map! " ""<Left>
+:map! ' ''<Left>
