@@ -22,8 +22,6 @@ filetype plugin indent on    " required
 
 "**********NERDTree**********
 "file system explorer (uses Vundle)
-"open NERDTree automatically when vim starts up
-autocmd vimenter * NERDTree
 "remap Ctrl^N to NERDTree Toggle
 map <C-n> :NERDTreeToggle<CR>
 
@@ -43,6 +41,16 @@ set softtabstop=10
 "useful for tab sensitive languages 
 set expandtab
 
+"**********FOLDS**********
+"enable folding
+set foldenable
+"opens num folds at the start
+set foldlevelstart=10
+"sets max level of nested folds
+set foldnestmax=10
+"sets fold based on indentatioe
+
+"**********ETC**********
 "show line numbers to the left of editor
 set number
 
@@ -62,13 +70,24 @@ set incsearch
 "highlights search matches
 set hlsearch
 
-"**********FOLDS**********
-"enable folding
-set foldenable
-"opens num folds at the start
-set foldlevelstart=10
-"sets max level of nested folds
-set foldnestmax=10
-"remaps open/close folds to space
-nnoremap <space> za
-"sets fold based on indentatioe
+"**********REMAPPINGS**********
+":nmap = normal mode
+":map! = insert mode
+"maps Ctrl-b to go to the beginning of file
+:map! <C-b> <Esc>:1<Enter>i
+:nmap <C-b> :1<Enter>
+"maps Ctrl-e to go to the end of file
+:map! <C-e> <Esc>:999<Enter>i
+:nmap <C-e> :999<Enter>
+"maps Ctrl-h to help (normal mode)
+:nmap <C-h> :help<Enter>
+"maps Ctrl-Left to :tabp
+:map! <C-Left> <Esc>:tabp<Enter>i
+:nmap <C-Left> :tabp<Enter>
+"maps Ctrl-Right to :tabn
+:map! <C-Right> <Esc>:tabn<Enter>i
+:nmap <C-Right> :tabn<Enter>
+"maps Ctrl-t to :tabe
+:map! <C-t> <Esc>:tabe<Space>
+:nmap <C-t> :tabe<Space>
+
