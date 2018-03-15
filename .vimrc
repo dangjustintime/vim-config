@@ -100,5 +100,3 @@ set hlsearch
 :map! ( ()<Left>
 :map! [ []<Left>
 :map! { {}<Left>
-:map! " ""<Left>
-:map! ' ''<Left>
