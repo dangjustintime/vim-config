@@ -55,12 +55,15 @@ set hlsearch
 " :nmap = normal mode
 " :map! = insert mode
 " <CR> = <Enter>
-" maps Ctrl-b to go to the beginning of file
-:map! <C-b> <Esc>:1<CR>i
-:nmap <C-b> :1<CR>
+" maps Ctrl-b to go to the beginning of rile
+:map! <C-b> <Esc>0%<CR>i
+:nmap <C-b> 0%<CR>
 " maps Ctrl-e to go to the end of file
-:map! <C-e> <Esc>:999<CR>i
-:nmap <C-e> :999<CR>
+:map! <C-e> <Esc>100%<CR>i
+:nmap <C-e> 100%<CR>
+" maps Ctrl-m to go to the middle of the file
+:map! <C-m> <Esc>50%<CR>i
+:nmap <C-m> 50%<CR>
 " maps Ctrl-h to help (normal mode)
 :map! <C-h> :help<CR>
 :nmap <C-h> :help<CR>
@@ -80,3 +83,10 @@ set hlsearch
 " maps Ctrl-r to replace
 :map! <C-r> <Esc>:%s/
 :nmap <C-r> :%s/
+" remaps r to redo in normal mode
+:nmap <r> :redo<CR>
+"disable arrow key
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
