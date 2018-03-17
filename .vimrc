@@ -36,6 +36,16 @@ let g:clang_library_path='/usr/lib64/libclang.so.3.8'
 " show line numbers to the left of editor
 set number relativenumber
 
+"----------COLUMN COLOR----------
+" highlights columns past 80
+let &colorcolumn=join(range(81,999),",")
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+
+
+"----------WORD WRAP----------
+" turn off text wrap
+set nowrap
+
 "----------ETC----------
 " turns on filetype detection
 " allows loading of specific language indentation
