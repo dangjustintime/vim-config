@@ -17,6 +17,9 @@ Plugin 'VundleVim/Vundle.vim'
 " NERDTree - file system explorer
 Plugin 'scrooloose/nerdtree'
 
+" INDENTLINE - shows vertical lines for indentation
+Plugin 'yggdroot/indentline'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -45,6 +48,11 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 "----------WORD WRAP----------
 " turn off text wrap
 set nowrap
+
+"----------TABS----------
+" sets tap to 2 spaces for cpp files
+autocmd FileType cpp setlocal expandtab shiftwidth=2 softtabstop=2
+let g:indentLine_char = '»'
 
 "----------ETC----------
 " turns on filetype detection
