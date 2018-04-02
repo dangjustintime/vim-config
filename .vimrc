@@ -99,6 +99,8 @@ set hlsearch
 :nmap <C-r> :%s//g<Left><Left>
 " remaps r to redo in normal mode
 :nmap r :redo<CR>
+" remaps m to place screen at the middle of the cursor
+:nmap m zz
 " disable arrow keys in normal mode
 noremap <Up> <Nop>
 noremap <Down> <Nop>
