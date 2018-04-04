@@ -68,10 +68,14 @@ set hlsearch
 :map! { {}<Left>
 " maps Ctrl-r to replace
 :nmap <C-r> :%s//g<Left><Left>
-" remaps r to redo in normal mode
+" maps r to redo in normal mode
 :nmap r :redo<CR>
-" remaps m to place screen at the middle of the cursor
+" maps m to place screen at the middle of the cursor
 :nmap m zz
+" maps n in normal mode to insert new line
+:nmap n i<CR><Esc>
+" maps t in normal mode to insert tabs
+:nmap t i<Tab><Esc>
 " disable arrow keys in normal mode
 noremap <Up> <Nop>
 noremap <Down> <Nop>
