@@ -20,7 +20,11 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 set nowrap
 
 "----------TABS----------
-" sets tap to 2 spaces for cpp files
+" default tab
+set tabstop=4
+set shiftwidth=4
+set expandtab
+" sets tab to 2 spaces for cpp files
 autocmd FileType cpp setlocal expandtab shiftwidth=2 softtabstop=2
 autocmd FileType c setlocal expandtab shiftwidth=2 softtabstop=2
 let g:indentLine_char = '»'
