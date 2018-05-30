@@ -1,39 +1,9 @@
+"----------NO PLUGIN VERSION----------
 " syntax for vimrc is white space sensitive
 " be careful when spacing
 
-"----------Vundle----------
-" vim plugin manager
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-" Keep Plugin commands between vundle#begin/end.
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" NERDTree - file system explorer
-Plugin 'scrooloose/nerdtree'
-
-" INDENTLINE - shows vertical lines for indentation
-Plugin 'yggdroot/indentline'
-
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-"----------NERDTree----------
-" file system explorer (uses Vundle)
-" remap Ctrl^N to NERDTree Toggle
-map <C-n> :NERDTreeToggle<CR>
-
-"----------clang_complete----------
-" autocomplete for C/C++ code
-" path to directory where library can be found
-let g:clang_library_path='/usr/lib/llvm-3.8/lib'
-" or path directly to the library file
-let g:clang_library_path='/usr/lib64/libclang.so.3.8'
 
 "----------LINE NUMBERS----------
 " show line numbers to the left of editor
@@ -50,8 +20,15 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 set nowrap
 
 "----------TABS----------
-" sets tap to 2 spaces for cpp files
+" default tab settings
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+set smartindent
+" sets tab to 2 spaces for cpp files
 autocmd FileType cpp setlocal expandtab shiftwidth=2 softtabstop=2
+autocmd FileType c setlocal expandtab shiftwidth=2 softtabstop=2
 let g:indentLine_char = '»'
 
 "----------ETC----------
@@ -59,6 +36,9 @@ let g:indentLine_char = '»'
 " allows loading of specific language indentation
 " based on file detection
 filetype indent on
+" enables color scheme to syntax
+syntax on
+
 
 " shows options for autocomplete when searching through files
 set wildmenu
@@ -97,10 +77,14 @@ set hlsearch
 :map! { {}<Left>
 " maps Ctrl-r to replace
 :nmap <C-r> :%s//g<Left><Left>
-" remaps r to redo in normal mode
+" maps r to redo in normal mode
 :nmap r :redo<CR>
-" remaps m to place screen at the middle of the cursor
+" maps m to place screen at the middle of the cursor
 :nmap m zz
+" maps n in normal mode to insert new line
+:nmap n j0i<CR><Esc>k
+" maps t in normal mode to insert tabs
+:nmap t i<Tab><Esc>
 " disable arrow keys in normal mode
 noremap <Up> <Nop>
 noremap <Down> <Nop>
