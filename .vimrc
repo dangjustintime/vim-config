@@ -19,6 +19,10 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 " turn off text wrap
 set nowrap
 
+"----------RULER----------
+" turn on location of cursor at the bottom right
+set ruler
+
 "----------TABS----------
 " default tab settings
 set tabstop=4
@@ -48,34 +52,23 @@ set showmatch
 " disable highlights search matches
 set nohlsearch
 
-:nohl
-
 "----------REMAPPINGS----------
 " :nmap = normal mode
 " :map! = insert mode
 " <CR> = <Enter>
 " maps Ctrl-b to go to the beginning of rile
-:map! <C-b> <Esc>:1<CR>i
+:imap <C-b> <Esc>:1<CR>i
 :nmap <C-b> :1<CR>
 " maps Ctrl-e to go to the end of file
-:map! <C-e> <Esc>:999<CR>i
+:imap <C-e> <Esc>:999<CR>i
 :nmap <C-e> :999<CR>
 " maps Ctrl-h to help (normal mode)
-:map! <C-h> :help<CR>
+:imap <C-h> :help<CR>
 :nmap <C-h> :help<CR>
-" maps Ctrl-Left to :tabp
-:map! <C-Left> <Esc>:tabp<CR>i
-:nmap <C-Left> :tabp<CR>
-" maps Ctrl-Right to :tabn
-:map! <C-Right> <Esc>:tabn<CR>i
-:nmap <C-Right> :tabn<CR>
-" maps Ctrl-t to :tabe
-:map! <C-t> <Esc>:tabe<Space>
-:nmap <C-t> :tabe<Space>
 " adds closing character to opening character
-:map! ( ()<Left>
-:map! [ []<Left>
-:map! { {}<Left>
+:imap ( ()<Left>
+:imap [ []<Left>
+:imap { {}<Left>
 " maps Ctrl-r to replace
 :nmap <C-r> :%s//g<Left><Left>
 " maps r to redo in normal mode
