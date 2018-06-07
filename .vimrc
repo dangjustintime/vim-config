@@ -29,9 +29,8 @@ set smartindent
 " sets tab to 2 spaces for cpp files
 autocmd FileType cpp setlocal expandtab shiftwidth=2 softtabstop=2
 autocmd FileType c setlocal expandtab shiftwidth=2 softtabstop=2
-let g:indentLine_char = '»'
 
-"----------ETC----------
+ "----------ETC----------
 " turns on filetype detection
 " allows loading of specific language indentation
 " based on file detection
@@ -46,8 +45,10 @@ set wildmenu
 " highlights matching parenthesis-like character
 set showmatch
 
-" highlights search matches
-set hlsearch
+" disable highlights search matches
+set nohlsearch
+
+:nohl
 
 "----------REMAPPINGS----------
 " :nmap = normal mode
@@ -82,9 +83,13 @@ set hlsearch
 " maps m to place screen at the middle of the cursor
 :nmap m zz
 " maps n in normal mode to insert new line
-:nmap n j0i<CR><Esc>k
+:nmap n $i<Right><CR><Esc>
 " maps t in normal mode to insert tabs
-:nmap t i<Tab><Esc>
+:nmap <Tab> ^i<Tab><Esc>l
+" maps B in normal mode to move cursor to the beginning of current line
+:nmap B ^
+" maps E in normal mode to move cursor to the end of current line
+:nmap E $
 " disable arrow keys in normal mode
 noremap <Up> <Nop>
 noremap <Down> <Nop>
