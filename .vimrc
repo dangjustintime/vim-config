@@ -83,6 +83,15 @@ set nohlsearch
 :nmap B ^
 " maps E in normal mode to move cursor to the end of current line
 :nmap E $
+" maps Ctrl-t to new tab
+:imap <C-t> <Esc>:tabe<Space>
+:nmap <C-t> :tabe<Space>
+" maps Ctrl-p to previous tab
+:imap <C-p> <Esc>:tabp<CR>
+:nmap <C-p> :tabp<CR>
+" maps Ctrl-n to next tab
+:imap <C-n> <Esc>:tabn<CR>
+:nmap <C-n> :tabn<CR>
 " disable arrow keys in normal mode
 noremap <Up> <Nop>
 noremap <Down> <Nop>
